@@ -7,11 +7,11 @@ class ServiceCliente {
     }
 
 
-    BuscarUm(id) {
+    async BuscarUm(id) {
         if(!id || isNaN(id)) {
             throw new Error("Favor informar somente números")
         }
-        return Cliente.Buscar(id)
+        await Cliente.Buscar(id)
     }
 
 
@@ -56,3 +56,12 @@ class ServiceCliente {
 }
 
 export default new ServiceCliente()
+
+
+
+//config
+//index
+//mode
+//service
+//controller
+//router

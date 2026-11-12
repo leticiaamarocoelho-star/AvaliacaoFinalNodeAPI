@@ -13,10 +13,11 @@ class ControllerCliente {
     }
 
 
-    BuscarUm(req, res) {
+    async BuscarUm(req, res) {
         try {
             const id = req.params.id
-            const nome = ServiceCliente.BuscarUm(id)
+            const nome = await ServiceCliente.BuscarUm(id)
+
             res.send({ nome })
         } catch (error) {
             res.send({ menssagem: error.menssagem })
